@@ -1,0 +1,46 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Login</title>
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+</head>
+<body>
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/auth")
+    @Scripts.Render("~/bundles/plugins")
+    <div id="errorMsg" class="error" style="display:none;">
+
+    </div>
+    <div class="centerBodyElement">
+    <div class="frmLogin">
+        <div class="imgcontainer">
+            <img src="/Content/Images/img_avatar.png" alt="Avatar" class="avatar">
+        </div>
+
+        <div class="container">
+            <label><b>Username</b></label>
+            <input type="text" placeholder="Enter Username" name="uname" id="username" data-error-msg="User Name is required" required>
+
+            <label><b>Password</b></label>
+            <input type="password" placeholder="Enter Password" name="psw" id="password" data-error-msg="Password is required" required>
+
+            <input type="checkbox" id="chkrem" checked="checked"> Remember me
+            <button type="submit" id="btnLogin">Login</button>            
+        </div>
+
+        @*<div class="container" style="background-color:#f1f1f1">
+            <button type="button" class="cancelbtn">Cancel</button>
+            <span class="psw">Forgot <a href="#">password?</a></span>
+        </div>*@
+
+    </div>
+        </div>
+</body>
+</html>

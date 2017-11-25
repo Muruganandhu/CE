@@ -1,0 +1,108 @@
+@model ChitEngine.Models.Chit.ChitDetailsModel
+
+@{
+    ViewBag.Title = "CreateChit";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>CreateChit</h2>
+@Scripts.Render("~/bundles/jquery")
+@Scripts.Render("~/bundles/customer")
+@Scripts.Render("~/bundles/plugins")
+
+@using (Html.BeginForm()) {
+    @Html.AntiForgeryToken()
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>ChitDetailsModel</legend>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.ChitId)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChitId)
+            @Html.ValidationMessageFor(model => model.ChitId)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChitName)
+        </div>
+        <div class="editor-field" >
+            <input id="ChitName" type="text" />
+            @*@Html.EditorFor(model => model.ChitName)
+            @Html.ValidationMessageFor(model => model.ChitName)*@
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChitMonth)
+        </div>
+        <div class="editor-field" >
+            <input id="ChitMonth" type="number" />
+            @*@Html.EditorFor(model => model.ChitMonth)
+            @Html.ValidationMessageFor(model => model.ChitMonth)*@
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ChitAmount)
+        </div>
+        <div class="editor-field" >
+            <input id="ChitAmount" type="number" />
+            @*@Html.EditorFor(model => model.ChitAmount)
+            @Html.ValidationMessageFor(model => model.ChitAmount)*@
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.ChitBade)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ChitBade)
+            @Html.ValidationMessageFor(model => model.ChitBade)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.PayPerHead)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PayPerHead)
+            @Html.ValidationMessageFor(model => model.PayPerHead)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.BeetAmount)
+        </div>
+        <div class="editor-field" >
+            <input id="BeetAmount" type="number" />
+            @*@Html.EditorFor(model => model.BeetAmount)
+            @Html.ValidationMessageFor(model => model.BeetAmount)*@
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.CreatedBy)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedBy)
+            @Html.ValidationMessageFor(model => model.CreatedBy)
+        </div>*@
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.CreatedDate)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.CreatedDate)
+            @Html.ValidationMessageFor(model => model.CreatedDate)
+        </div>*@
+
+        <p>
+            <input type="submit" id="btnCreate" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/bundles/jqueryval")
+}

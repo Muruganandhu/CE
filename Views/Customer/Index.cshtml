@@ -1,0 +1,93 @@
+@model IEnumerable<ChitEngine.Models.Chit.ChitDetailsModel>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "CreateChit")
+</p>
+<div>
+    <table cellspacing='0'>
+        <thead>
+            <tr>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChitName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChitMonth)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChitAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.ChitBade)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.PayPerHead)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.BeetAmount)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedBy)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CustomerName)
+                </th>
+                <th>
+                    @Html.DisplayNameFor(model => model.CreatedDate)
+                </th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                <tr>                    
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChitName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChitMonth)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChitAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ChitBade)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.PayPerHead)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.BeetAmount)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedBy)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CustomerName)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CreatedDate)
+                    </td>
+                    <td>
+                        <a href="@Url.Action("Edit", "Customer", new {id=item.ChitId })" class="btn btn-primary" title="Edit">
+                            <img src="~/Content/Images/edit.png" alt="Edit" class="invertImageColor" />
+                        </a>
+                       &nbsp;
+                        <a href="@Url.Action("Details", "Customer", new { id = item.ChitId })" class="btn btn-primary" title="Details">
+                            <img src="~/Content/Images/details.png" alt="Edit" class="invertImageColor" />
+                        </a>
+                        @*@Html.ActionLink("Details", "Details", new { id = item.ChitId }) |
+                        @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })*@
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
